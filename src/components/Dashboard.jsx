@@ -28,7 +28,12 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchMessages = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/messages");
+        const res = await fetch(
+          "https://stack-backend-1-j3jf.onrender.com/api/messages",
+          {
+            method: "GET",
+          }
+        );
         const data = await res.json();
         setMessages(data);
       } catch (error) {
